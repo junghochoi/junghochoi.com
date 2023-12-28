@@ -16,7 +16,9 @@ export const HomeHeader = () => {
 			)}
 		>
 			<div className="max-w-screen-xl h-full flex justify-between items-center mx-auto text-white px-11">
-				<div className="text-xl">{"</>"} Daniel Choi</div>
+				<div className="text-xl">
+					{"</>"} <span className="hidden md:block">Daniel Choi</span>
+				</div>
 
 				<div className="space-x-10 mr-18">
 					<Link

@@ -1,19 +1,80 @@
+import { cn } from "@/lib/utils"
+
+import { Badge } from "@/components/ui/badge"
+
+import { Rubik } from "next/font/google"
+const rubikFont = Rubik({
+	subsets: ["latin"],
+	weight: ["300", "400", "500", "600", "700", "800", "900"],
+})
+
 export const Work = () => {
 	return (
-		<div className="py-24">
-			<h1 className="text-4xl pb-4">Work Experience</h1>
+		<div className="py-24 px-5">
+			<h1 className={cn("text-4xl pb-4 text-white", rubikFont.className)}>
+				Work Experience
+			</h1>
 			<ol className="relative border-s border-gray-200 dark:border-gray-700">
-				<li className="mb-10 ms-4">
+				<li className="mb-10 ms-4 bg-slate-800 hover:bg-slate-700 transition-all duration-100 p-10 hover:shadow-lg rounded">
 					<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-					<time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-						February 2022
+					<time className="mb-1 text-sm font-normal leading-none text-gray-200 ">
+						May - Aug 2023
 					</time>
-					<h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-						Application UI code in Tailwind CSS
+					<h3 className="text-lg font-semibold text-gray-200">
+						Yext Inc. | Software Engineer Intern
 					</h3>
-					<p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-						Get access to over 20+ pages including a dashboard layout, charts,
-						kanban board, calendar, and pre-order E-commerce & Marketing pages.
+					<div className="mb-4 text-base font-normal text-gray-400">
+						<p>
+							Enhanced Yext's backend entity search service by reducing latency
+							on server cold-starts and implementing document search indexing
+						</p>
+					</div>
+
+					<div className="space-x-3">
+						<Badge className="bg-sky-800 text-gray-300">Java</Badge>
+						<Badge className="bg-sky-800 text-gray-300">Kafka</Badge>
+						<Badge className="bg-sky-800 text-gray-300">Dagger2</Badge>
+						<Badge className="bg-sky-800 text-gray-300">Rabbitmq</Badge>
+					</div>
+				</li>
+
+				<li className="mb-10 ms-4 bg-slate-800 hover:bg-slate-700 transition-all duration-100 p-10 hover:shadow-lg rounded">
+					<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+					<time className="mb-1 text-sm font-normal leading-none text-gray-200 ">
+						May - Aug 2022
+					</time>
+					<h3 className="text-lg font-semibold text-gray-200">
+						Spring Health | Software Engineer Intern
+					</h3>
+					<p className="mb-4 text-base font-normal text-gray-400">
+						Designed and Developed Spring Health's in-platform Video Chat
+						Feature, allowing therapists and patients to have sessions without
+						the reliance on third party applications such as Zoom.us or Google
+						Meets
+					</p>
+					<div className="space-x-3">
+						<Badge className="bg-sky-800 text-gray-300">React</Badge>
+						<Badge className="bg-sky-800 text-gray-300">GraphQL</Badge>
+						<Badge className="bg-sky-800 text-gray-300">Ruby On Rails</Badge>
+						<Badge className="bg-sky-800 text-gray-300">PostgreSQL</Badge>
+						<Badge className="bg-sky-800 text-gray-300">Docker</Badge>
+						<Badge className="bg-sky-800 text-gray-300">Typescript</Badge>
+					</div>
+				</li>
+
+				<li className="mb-10 ms-4 bg-slate-800 hover:bg-slate-700 transition-all duration-100 p-10 hover:shadow-lg rounded">
+					<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+					<time className="mb-1 text-sm font-normal leading-none text-gray-200 ">
+						June - Aug 2021
+					</time>
+					<h3 className="text-lg font-semibold text-gray-200">
+						Advisar AI. | Software Engineer Intern
+					</h3>
+					<p className="mb-4 text-base font-normal text-gray-400">
+						Designed and Developed Spring Health's in-platform Video Chat
+						Feature, allowing therapists and patients to have sessions without
+						the reliance on third party applications such as Zoom.us or Google
+						Meets
 					</p>
 					<a
 						href="#"
@@ -22,7 +83,8 @@ export const Work = () => {
 						Learn more
 					</a>
 				</li>
-				<li className="mb-10 ms-4">
+
+				{/* <li className="mb-10 ms-4">
 					<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
 					<time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
 						March 2022
@@ -74,7 +136,7 @@ export const Work = () => {
 						Get started with dozens of web components and interactive elements
 						built on top of Tailwind CSS.
 					</p>
-				</li>
+				</li> */}
 			</ol>
 		</div>
 	)

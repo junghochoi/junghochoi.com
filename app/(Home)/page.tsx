@@ -19,15 +19,15 @@ const HomePage = () => {
 					<About />
 				</div>
 
-				<div className="lg:w-7/12">
+				<div className="h-80 lg:w-7/12">
 					<Islands />
 					<Work />
 				</div>
 			</div>
-
+			{/* 
 			<div className="bg-green-300">
 				<Projects />
-			</div>
+			</div> */}
 		</div>
 	)
 }
