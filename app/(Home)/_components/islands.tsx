@@ -12,10 +12,10 @@ const IslandCanvas = () => {
 	const cameraPosition: [number, number, number] = [1.7, 0.9, 0.45]
 
 	return (
-		<div className="h-full lg:h-[calc(100vh-64px)]  w-full">
+		<div className="h-96 lg:h-[calc(100vh-64px)]  w-full">
 			<Canvas
 				camera={{
-					fov: 70,
+					fov: 60,
 					near: 0.1,
 					far: 1000,
 					position: cameraPosition,

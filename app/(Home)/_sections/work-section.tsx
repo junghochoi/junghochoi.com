@@ -30,11 +30,17 @@ export const Work = () => {
 						</p>
 					</div>
 
-					<div className="space-x-3">
-						<Badge className="bg-sky-800 text-gray-300">Java</Badge>
-						<Badge className="bg-sky-800 text-gray-300">Kafka</Badge>
-						<Badge className="bg-sky-800 text-gray-300">Dagger2</Badge>
-						<Badge className="bg-sky-800 text-gray-300">Rabbitmq</Badge>
+					<div className="flex flex-wrap">
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">Java</Badge>
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">
+							Kafka
+						</Badge>
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">
+							Dagger2
+						</Badge>
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">
+							Rabbitmq
+						</Badge>
 					</div>
 				</li>
 
@@ -52,13 +58,25 @@ export const Work = () => {
 						the reliance on third party applications such as Zoom.us or Google
 						Meets
 					</p>
-					<div className="space-x-3">
-						<Badge className="bg-sky-800 text-gray-300">React</Badge>
-						<Badge className="bg-sky-800 text-gray-300">GraphQL</Badge>
-						<Badge className="bg-sky-800 text-gray-300">Ruby On Rails</Badge>
-						<Badge className="bg-sky-800 text-gray-300">PostgreSQL</Badge>
-						<Badge className="bg-sky-800 text-gray-300">Docker</Badge>
-						<Badge className="bg-sky-800 text-gray-300">Typescript</Badge>
+					<div className="flex flex-wrap">
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">
+							React
+						</Badge>
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">
+							GraphQL
+						</Badge>
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">
+							Ruby On Rails
+						</Badge>
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">
+							PostgreSQL
+						</Badge>
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">
+							Docker
+						</Badge>
+						<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">
+							Typescript
+						</Badge>
 					</div>
 				</li>
 
