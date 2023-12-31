@@ -23,7 +23,7 @@ const IslandCanvas = () => {
 				}}
 				shadows
 			>
-				<axesHelper args={[5]} />
+				{/* <axesHelper args={[5]} /> */}
 				<CanvasChildren />
 			</Canvas>
 		</div>
