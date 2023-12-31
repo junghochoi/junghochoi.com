@@ -1,17 +1,12 @@
 import { cn } from "@/lib/utils"
 
 import { Badge } from "@/components/ui/badge"
-
-import { Rubik } from "next/font/google"
-const rubikFont = Rubik({
-	subsets: ["latin"],
-	weight: ["300", "400", "500", "600", "700", "800", "900"],
-})
+import { RubikFont } from "@/lib/fonts"
 
 export const Work = () => {
 	return (
 		<div className="py-24 px-5">
-			<h1 className={cn("text-4xl pb-4 text-white", rubikFont.className)}>
+			<h1 className={cn("text-4xl pb-4 text-white", RubikFont.className)}>
 				Work Experience
 			</h1>
 			<ol className="relative border-s border-gray-200 dark:border-gray-700">

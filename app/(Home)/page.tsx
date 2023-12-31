@@ -6,11 +6,6 @@ import { About } from "./_sections/about-section"
 import { Work } from "./_sections/work-section"
 import { Projects } from "./_sections/project-section"
 
-const rubikFont = Rubik({
-	subsets: ["latin"],
-	weight: ["300", "400", "500", "600", "700", "800", "900"],
-})
-
 const HomePage = () => {
 	return (
 		<div className="max-w-screen-lg mx-auto">
@@ -24,10 +19,10 @@ const HomePage = () => {
 					<Work />
 				</div>
 			</div>
-			{/* 
+
 			<div className="bg-green-300">
 				<Projects />
-			</div> */}
+			</div>
 		</div>
 	)
 }

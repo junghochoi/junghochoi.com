@@ -1,7 +1,7 @@
 "use client"
 import { Canvas, useLoader, useThree } from "@react-three/fiber"
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
-import { Gltf, OrbitControls } from "@react-three/drei"
+import { OrbitControls } from "@react-three/drei"
 
 import { useFrame } from "@react-three/fiber"
 import { useRef } from "react"
@@ -10,12 +10,13 @@ import { Color } from "three"
 // position: [0, 12, 20]
 const IslandCanvas = () => {
 	const cameraPosition: [number, number, number] = [1.7, 0.9, 0.45]
+	const FOV = window.innerWidth < 1024 ? 60 : 70
 
 	return (
 		<div className="h-96 lg:h-[calc(100vh-64px)]  w-full">
 			<Canvas
 				camera={{
-					fov: 60,
+					fov: FOV,
 					near: 0.1,
 					far: 1000,
 					position: cameraPosition,
@@ -30,10 +31,6 @@ const IslandCanvas = () => {
 }
 
 const CanvasChildren = () => {
-	const { camera } = useThree()
-
-	camera
-
 	return (
 		<>
 			<directionalLight
@@ -54,7 +51,11 @@ const CanvasChildren = () => {
 				scale={0.05}
 				position={[0.4, -0.25, 0.15]}
 			/>
-			<Island url="/forest_mushroom_island.gltf" position={[-0.4, 0.1, -0.4]} />
+			<Island
+				url="/forest_mushroom_island.gltf"
+				position={[-0.2, 0.1, -0.3]}
+				scale={0.75}
+			/>
 
 			<OrbitControls
 				enableZoom={false}
