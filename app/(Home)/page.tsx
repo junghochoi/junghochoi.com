@@ -19,7 +19,7 @@ const HomePage = () => {
 					<About />
 				</div>
 
-				<div className="h-80 lg:w-7/12">
+				<div className="lg:w-7/12">
 					<Islands />
 					<Work />
 				</div>
