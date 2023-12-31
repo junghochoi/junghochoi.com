@@ -17,11 +17,8 @@ const HomePage = () => {
 				<div className="h-full lg:w-7/12">
 					<Islands />
 					<Work />
+					<Projects />
 				</div>
-			</div>
-
-			<div className="">
-				<Projects />
 			</div>
 		</div>
 	)
