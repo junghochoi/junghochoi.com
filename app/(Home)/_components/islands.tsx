@@ -4,19 +4,24 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
 import { OrbitControls } from "@react-three/drei"
 
 import { useFrame } from "@react-three/fiber"
-import { useRef } from "react"
-import { Color } from "three"
+import { useRef, useEffect, useState } from "react"
+import { Color, Mesh } from "three"
 
 // position: [0, 12, 20]
 const IslandCanvas = () => {
+	const [fov, setFov] = useState(70)
+
+	useEffect(() => {
+		const FOV = window.innerWidth < 1024 ? 60 : 70
+		setFov(FOV)
+	}, [])
 	const cameraPosition: [number, number, number] = [1.7, 0.9, 0.45]
-	const FOV = window.innerWidth < 1024 ? 60 : 70
 
 	return (
 		<div className="h-96 lg:h-[calc(100vh-64px)]  w-full">
 			<Canvas
 				camera={{
-					fov: FOV,
+					fov: fov,
 					near: 0.1,
 					far: 1000,
 					position: cameraPosition,
@@ -76,7 +81,7 @@ interface IslandProps {
 
 const Island = ({ url, position, scale }: IslandProps) => {
 	const gltf = useLoader(GLTFLoader, url)
-	const islandPrimitive = useRef<ThreeElements.primitive | undefined>()
+	const islandPrimitive = useRef<Mesh>(null!)
 
 	useFrame(({ clock, camera }) => {
 		// console.log(camera.position)
