@@ -100,7 +100,7 @@ export const Work = () => {
 					dateRange="May - August 2021"
 					skills={["React", "GraphQL", "Ruby On Rails", "PostgreSQL", "Docker", "Typescript"]}
 					description="Designed and Developed Spring Health's in-platform Video Chat Feature, allowing therapists and
-							patients to have sessionsfsfsthoudfsdfasdfa sdfas dfasdffsdfajklsdfjkl;asdjkl;asdfjkl;fasjkl;asdft the reliance on third party applications such as Zoom.us or Google
+							patients to hav lorem ipsum hello cats and dog i am paul adt treides duke of arrakis the reliance on third party applications such as Zoom.us or Google
 							Meets"
 				/>
 			</ol>

@@ -6,34 +6,37 @@ import { OrbitControls } from "@react-three/drei"
 
 import { useFrame } from "@react-three/fiber"
 import { useRef, useEffect, useState } from "react"
-import { Color, Mesh } from "three"
+import { Color, Mesh, PerspectiveCamera } from "three"
 
 // position: [0, 12, 20]
 const IslandCanvas = () => {
-	const [fov, setFov] = useState(70)
 	const [allowRotate, setAllowRotate] = useState(false)
-
+	const [initialFov, setInitialFov] = useState(70)
 	useEffect(() => {
-		const FOV = window.innerWidth < 1024 ? 60 : 70
-		const rotate = window.innerWidth > 640
-		setAllowRotate(rotate)
-		setFov(FOV)
+		setInitialFov(window.innerWidth < 1024 ? 45 : 70)
+		const handleWindowResize = () => {
+			setAllowRotate(window.innerWidth > 640)
+		}
+		window.addEventListener("resize", handleWindowResize)
+		return () => {
+			window.removeEventListener("resize", handleWindowResize)
+		}
 	}, [])
+
 	const cameraPosition: [number, number, number] = [1.7, 0.9, 0.45]
 
 	return (
-		<div className="h-96 lg:h-[calc(100vh-64px)]  w-full">
+		<div className=" h-60 lg:h-[calc(100svh-64px)]  w-full">
 			<Canvas
 				camera={{
-					fov: fov,
+					fov: initialFov,
 					near: 0.1,
 					far: 1000,
 					position: cameraPosition,
 				}}
 				shadows
 			>
-				{/* <axesHelper args={[5]} /> */}
-
+				{/* <CameraHelper /> */}
 				<directionalLight castShadow position={[1, 1, -1]} color={Color.NAMES.azure} intensity={2.2} />
 				<ambientLight intensity={0.5} />
 				<Island url="/floating_island.gltf" position={[-0.3, 0.1, 0.5]} scale={1.5} />
@@ -45,10 +48,34 @@ const IslandCanvas = () => {
 					enableRotate={allowRotate}
 					autoRotate={true}
 					autoRotateSpeed={0.8}
+					onPointerUp={(e) => e.stopPropagation()}
 				/>
+				{/* <CanvasChildren /> */}
+				{/* <axesHelper args={[5]} /> */}
 			</Canvas>
 		</div>
 	)
+}
+
+const CameraHelper = () => {
+	const { camera } = useThree()
+
+	const perspectiveCamera = camera as PerspectiveCamera
+	useEffect(() => {
+		const handleWindowResize = () => {
+			perspectiveCamera.fov = window.innerWidth < 1024 ? 45 : 70
+			console.log(perspectiveCamera.fov)
+		}
+		window.addEventListener("resize", handleWindowResize)
+		return () => {
+			window.removeEventListener("resize", handleWindowResize)
+		}
+	}, [])
+	return null
+}
+
+const CanvasChildren = () => {
+	return <></>
 }
 
 interface IslandProps {
