@@ -8,15 +8,22 @@ import { useFrame } from "@react-three/fiber"
 import { useRef, useEffect, useState } from "react"
 import { Color, Mesh, PerspectiveCamera } from "three"
 
+const screenSmallZoom = 1.8
+const screenLargeZoom = 1.1
+
 // position: [0, 12, 20]
 const IslandCanvas = () => {
 	const [allowRotate, setAllowRotate] = useState(false)
-	const [initialFov, setInitialFov] = useState(70)
+	const [fov, setFov] = useState(1)
 	useEffect(() => {
-		setInitialFov(window.innerWidth < 1024 ? 45 : 70)
+		setAllowRotate(window.innerWidth > 640)
+		setFov(window.innerWidth < 1024 ? screenSmallZoom : screenLargeZoom)
+
 		const handleWindowResize = () => {
 			setAllowRotate(window.innerWidth > 640)
+			setFov(window.innerWidth < 1024 ? screenSmallZoom : screenLargeZoom)
 		}
+
 		window.addEventListener("resize", handleWindowResize)
 		return () => {
 			window.removeEventListener("resize", handleWindowResize)
@@ -29,14 +36,14 @@ const IslandCanvas = () => {
 		<div className=" h-60 lg:h-[calc(100svh-64px)]  w-full">
 			<Canvas
 				camera={{
-					fov: initialFov,
+					fov: 70,
 					near: 0.1,
 					far: 1000,
 					position: cameraPosition,
 				}}
 				shadows
 			>
-				{/* <CameraHelper /> */}
+				<CameraHelper />
 				<directionalLight castShadow position={[1, 1, -1]} color={Color.NAMES.azure} intensity={2.2} />
 				<ambientLight intensity={0.5} />
 				<Island url="/floating_island.gltf" position={[-0.3, 0.1, 0.5]} scale={1.5} />
@@ -58,19 +65,15 @@ const IslandCanvas = () => {
 }
 
 const CameraHelper = () => {
-	const { camera } = useThree()
+	useFrame((state) => {
+		// const perspectiveCamera = state.camera as PerspectiveCamera
+		// perspectiveCamera.fov = fov
 
-	const perspectiveCamera = camera as PerspectiveCamera
-	useEffect(() => {
-		const handleWindowResize = () => {
-			perspectiveCamera.fov = window.innerWidth < 1024 ? 45 : 70
-			console.log(perspectiveCamera.fov)
-		}
-		window.addEventListener("resize", handleWindowResize)
-		return () => {
-			window.removeEventListener("resize", handleWindowResize)
-		}
-	}, [])
+		// console.log(fov)
+		state.camera.zoom = window.innerWidth < 1024 ? screenSmallZoom : screenLargeZoom
+		state.camera.updateProjectionMatrix()
+	})
+
 	return null
 }
 
