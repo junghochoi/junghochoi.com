@@ -1,4 +1,5 @@
 "use client"
+
 import { Canvas, useLoader, useThree } from "@react-three/fiber"
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
 import { OrbitControls } from "@react-three/drei"
@@ -10,9 +11,12 @@ import { Color, Mesh } from "three"
 // position: [0, 12, 20]
 const IslandCanvas = () => {
 	const [fov, setFov] = useState(70)
+	const [allowRotate, setAllowRotate] = useState(false)
 
 	useEffect(() => {
 		const FOV = window.innerWidth < 1024 ? 60 : 70
+		const rotate = window.innerWidth > 640
+		setAllowRotate(rotate)
 		setFov(FOV)
 	}, [])
 	const cameraPosition: [number, number, number] = [1.7, 0.9, 0.45]
@@ -38,17 +42,13 @@ const IslandCanvas = () => {
 				<OrbitControls
 					enableZoom={false}
 					enablePan={false}
-					enableRotate={window.innerWidth > 640}
+					enableRotate={allowRotate}
 					autoRotate={true}
 					autoRotateSpeed={0.8}
 				/>
 			</Canvas>
 		</div>
 	)
-}
-
-const CanvasChildren = () => {
-	return <></>
 }
 
 interface IslandProps {
