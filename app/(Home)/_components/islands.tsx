@@ -29,47 +29,26 @@ const IslandCanvas = () => {
 				shadows
 			>
 				{/* <axesHelper args={[5]} /> */}
-				<CanvasChildren />
+
+				<directionalLight castShadow position={[1, 1, -1]} color={Color.NAMES.azure} intensity={2.2} />
+				<ambientLight intensity={0.5} />
+				<Island url="/floating_island.gltf" position={[-0.3, 0.1, 0.5]} scale={1.5} />
+				<Island url="/winter_island.gltf" scale={0.05} position={[0.4, -0.25, 0.15]} />
+				<Island url="/forest_mushroom_island.gltf" position={[-0.2, 0.1, -0.3]} scale={0.75} />
+				<OrbitControls
+					enableZoom={false}
+					enablePan={false}
+					enableRotate={window.innerWidth > 640}
+					autoRotate={true}
+					autoRotateSpeed={0.8}
+				/>
 			</Canvas>
 		</div>
 	)
 }
 
 const CanvasChildren = () => {
-	return (
-		<>
-			<directionalLight
-				castShadow
-				position={[1, 1, -1]}
-				color={Color.NAMES.azure}
-				intensity={2.2}
-			/>
-			<ambientLight intensity={0.5} />
-
-			<Island
-				url="/floating_island.gltf"
-				position={[-0.3, 0.1, 0.5]}
-				scale={1.5}
-			/>
-			<Island
-				url="/winter_island.gltf"
-				scale={0.05}
-				position={[0.4, -0.25, 0.15]}
-			/>
-			<Island
-				url="/forest_mushroom_island.gltf"
-				position={[-0.2, 0.1, -0.3]}
-				scale={0.75}
-			/>
-
-			<OrbitControls
-				enableZoom={false}
-				enablePan={false}
-				autoRotate={true}
-				autoRotateSpeed={0.8}
-			/>
-		</>
-	)
+	return <></>
 }
 
 interface IslandProps {
@@ -91,14 +70,7 @@ const Island = ({ url, position, scale }: IslandProps) => {
 	})
 
 	return (
-		<primitive
-			object={gltf.scene}
-			ref={islandPrimitive}
-			position={position}
-			scale={scale}
-			recieveShadow
-			castShadow
-		/>
+		<primitive object={gltf.scene} ref={islandPrimitive} position={position} scale={scale} recieveShadow castShadow />
 	)
 }
 

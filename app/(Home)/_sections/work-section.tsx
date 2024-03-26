@@ -56,7 +56,9 @@ const WorkExperience = ({
 
 					<div className="flex flex-wrap">
 						{skills.map((skill) => (
-							<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2">{skill}</Badge>
+							<Badge className="bg-sky-800 text-gray-300 mr-1.5 mt-2" key={skill}>
+								{skill}
+							</Badge>
 						))}
 					</div>
 				</div>
