@@ -9,7 +9,7 @@ import { useRef, useEffect, useState } from "react"
 import { Color, Mesh, PerspectiveCamera } from "three"
 
 const screenSmallZoom = 1.8
-const screenLargeZoom = 1.1
+const screenLargeZoom = 0.95
 
 // position: [0, 12, 20]
 const IslandCanvas = () => {
@@ -33,7 +33,7 @@ const IslandCanvas = () => {
 	const cameraPosition: [number, number, number] = [1.7, 0.9, 0.45]
 
 	return (
-		<div className=" h-60 lg:h-[calc(100svh-64px)]  w-full">
+		<div id="main" className=" h-60 lg:h-[calc(100svh-64px)]  w-full">
 			<Canvas
 				camera={{
 					fov: 70,

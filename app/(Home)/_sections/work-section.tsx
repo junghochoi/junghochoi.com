@@ -69,7 +69,7 @@ const WorkExperience = ({
 
 export const Work = () => {
 	return (
-		<div className="px-5">
+		<div id="work" className="px-5 pt-[76px]">
 			<h1 className={cn("text-4xl pb-4 text-white", RubikFont.className)}>Work Experience</h1>
 			<ol className="relative border-s border-gray-200 dark:border-gray-700">
 				<WorkExperience
@@ -80,6 +80,15 @@ export const Work = () => {
 					skills={["Java", "Dagger2", "Kafka", "Rabbitmq"]}
 					description="Enhanced Yext's backend entity search service by reducing latency on server cold-starts and
 									implementing document search indexing"
+				/>
+
+				<WorkExperience
+					company="SX Industries"
+					imageSrc="/sx.png"
+					title="Software Engineer Intern"
+					dateRange="Feb - May 2023"
+					skills={["Python", "SARIMA", "Holt-Winters", "Machine Learning"]}
+					description="Analyzed Historical Sales Data using Python and forecasting models (Holt-Winters, SARIMA) for accurate sales and demand prediction"
 				/>
 
 				<WorkExperience
@@ -98,10 +107,9 @@ export const Work = () => {
 					imageSrc="/advisarai.jpeg"
 					title="Software Engineer Intern"
 					dateRange="May - August 2021"
-					skills={["React", "GraphQL", "Ruby On Rails", "PostgreSQL", "Docker", "Typescript"]}
-					description="Designed and Developed Spring Health's in-platform Video Chat Feature, allowing therapists and
-							patients to hav lorem ipsum hello cats and dog i am paul adt treides duke of arrakis the reliance on third party applications such as Zoom.us or Google
-							Meets"
+					skills={["React", "GraphQL", "PostgreSQL", "Docker", "Typescript"]}
+					description="Developed a React data engineering UI dashboard to efficiently display up to 1GB of spreadsheet data to support data
+					cleaning and modification for data model training."
 				/>
 			</ol>
 		</div>

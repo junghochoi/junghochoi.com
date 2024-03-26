@@ -4,14 +4,7 @@ import { Poppins } from "next/font/google"
 import { Menu } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import {
-	Sheet,
-	SheetTrigger,
-	SheetContent,
-	SheetHeader,
-	SheetTitle,
-	SheetDescription,
-} from "@/components/ui/sheet"
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 
 const poppinsFont = Poppins({
 	subsets: ["latin"],
@@ -20,12 +13,7 @@ const poppinsFont = Poppins({
 
 export const HomeHeader = () => {
 	return (
-		<div
-			className={cn(
-				"sticky top-0 w-full h-16 z-10 bg-slate-900",
-				poppinsFont.className
-			)}
-		>
+		<div className={cn("sticky top-0 w-full h-16 z-10 bg-slate-900", poppinsFont.className)}>
 			<div className="max-w-screen-xl h-full flex justify-between items-center mx-auto text-white px-11">
 				<div className="text-xl">
 					<span>
@@ -42,8 +30,8 @@ export const HomeHeader = () => {
 							<SheetHeader>
 								<SheetTitle>Are you sure absolutely sure?</SheetTitle>
 								<SheetDescription>
-									This action cannot be undone. This will permanently delete
-									your account and remove your data from our servers.
+									This action cannot be undone. This will permanently delete your account and remove your data from our
+									servers.
 								</SheetDescription>
 							</SheetHeader>
 						</SheetContent>
@@ -51,22 +39,16 @@ export const HomeHeader = () => {
 				</div>
 
 				<div className="hidden md:block space-x-10 mr-18">
-					<Link
-						className="min-w-6 h-full p-3 rounded hover:bg-gray-700 transition-colors duration-300"
-						href="/"
-					>
+					<Link className="min-w-6 h-full p-3 rounded hover:bg-gray-700 transition-colors duration-300" href="/#work">
 						Work
 					</Link>
 					<Link
 						className="min-w-6 h-full p-3 rounded hover:bg-gray-700 transition-colors duration-300"
-						href="/"
+						href="/#projects"
 					>
 						Projects
 					</Link>
-					<Link
-						className="min-w-6 h-full p-3 rounded hover:bg-gray-700 transition-colors duration-300"
-						href="/"
-					>
+					<Link className="min-w-6 h-full p-3 rounded hover:bg-gray-700 transition-colors duration-300" href="/">
 						Social
 					</Link>
 				</div>

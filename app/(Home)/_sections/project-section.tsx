@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export const Projects = () => {
 	return (
-		<div className="px-5">
+		<div id="projects" className="px-5  pt-[76px]">
 			<h1 className={cn("text-4xl pb-4 text-white", RubikFont.className)}>Projects</h1>
 
 			<div className="mb-10 bg-slate-800 hover:bg-slate-700 transition-all duration-100  hover:shadow-lg rounded">
