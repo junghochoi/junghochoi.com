@@ -24,16 +24,14 @@ const WorkExperience = ({
 			{/* This is the bullet */}
 			<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
 
-			<div className="flex justify-center ">
-				<div className="w-96 mr-4">
-					<Image
-						src={imageSrc}
-						width={200}
-						height={200}
-						alt="minesweeper"
-						className="rounded  hidden md:block lg:hidden"
-					/>
-				</div>
+			<div className="flex items-start">
+				<Image
+					src={imageSrc}
+					width={150}
+					height={100}
+					alt="minesweeper"
+					className="rounded mr-4 hidden md:block lg:hidden"
+				/>
 
 				<div>
 					<div className="flex flex-row items-center mb-3">
