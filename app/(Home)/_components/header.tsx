@@ -37,10 +37,12 @@ export const HomeHeader = () => {
 						</SheetTrigger>
 						<SheetContent className="bg-slate-800 flex flex-col justify-between">
 							<SheetHeader>
-								<SheetTitle className="text-white">Are you sure absolutely sure?</SheetTitle>
+								<SheetTitle className={cn("text-white", poppinsFont.className)}>{"</>"} Daniel Choi</SheetTitle>
 							</SheetHeader>
 
-							<SheetDescription className="flex flex-col text-white  items-center justify-center">
+							<SheetDescription
+								className={cn("flex flex-col text-white  items-center justify-center", poppinsFont.className)}
+							>
 								<SheetClose asChild>
 									<Link
 										className="min-w-6 text-4xl text-center p-3 rounded hover:bg-gray-700 transition-colors duration-300"
@@ -71,12 +73,12 @@ export const HomeHeader = () => {
 								<Link href="https://github.com/junghochoi" target="_blank">
 									<Github size={36} className="mr-4 text-white" />
 								</Link>
-								<Link href="https://github.com/junghochoi" target="_blank">
+								<Link href="https://www.linkedin.com/in/jungho-choi" target="_blank">
 									<Linkedin size={36} className="mr-4 text-white" />
 								</Link>
-								<Link href="https://github.com/junghochoi" target="_blank">
+								{/* <Link href="https://github.com/junghochoi" target="_blank">
 									<File size={36} className="mr-4 text-white" />
-								</Link>
+								</Link> */}
 							</SheetFooter>
 						</SheetContent>
 					</Sheet>
