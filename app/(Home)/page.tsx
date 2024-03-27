@@ -8,7 +8,7 @@ import { Projects } from "./_sections/project-section"
 
 const HomePage = () => {
 	return (
-		<div className="max-w-screen-lg mx-auto">
+		<div className="max-w-screen-lg mx-auto px-4 lg:px-0">
 			<div className="lg:flex lg:justify-center lg:gap-4">
 				<div className="lg:h-[calc(100vh-64px)] lg:w-5/12 lg:sticky lg:top-16">
 					<About />

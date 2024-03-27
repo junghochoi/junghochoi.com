@@ -20,16 +20,16 @@ const WorkExperience = ({
 	skills: string[]
 }) => {
 	return (
-		<li className="mb-10 ms-4 bg-slate-800 hover:bg-slate-700 transition-all duration-100 p-10 hover:shadow-lg rounded">
+		<li className="p-4 mb-6 ms-4 bg-slate-800 hover:bg-slate-700 transition-all duration-100  hover:shadow-lg rounded">
 			{/* This is the bullet */}
 			<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
 
 			<div className="flex items-start">
 				<Image
 					src={imageSrc}
-					width={150}
+					width={100}
 					height={100}
-					alt="minesweeper"
+					alt={company}
 					className="rounded mr-4 hidden md:block lg:hidden"
 				/>
 
@@ -85,7 +85,7 @@ export const Work = () => {
 				<WorkExperience
 					company="SX Industries"
 					imageSrc="/sx.png"
-					title="Software Engineer Intern"
+					title="Data Consultant"
 					dateRange="Feb - May 2023"
 					skills={["Python", "SARIMA", "Holt-Winters", "Machine Learning"]}
 					description="Analyzed Historical Sales Data using Python and forecasting models (Holt-Winters, SARIMA) for accurate sales and demand prediction"
