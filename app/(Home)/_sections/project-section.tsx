@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export const Projects = () => {
 	return (
-		<div id="projects" className="px-5  pt-[76px]">
+		<div id="projects" className="px-5  py-[76px]">
 			<h1 className={cn("text-4xl pb-4 text-white", RubikFont.className)}>Projects</h1>
 
 			<div className="mb-10 bg-slate-800 hover:bg-slate-700 transition-all duration-100  hover:shadow-lg rounded">
@@ -43,7 +43,7 @@ export const Projects = () => {
 				</div>
 			</div>
 
-			<div className="mb-10 bg-slate-800 hover:bg-slate-700 transition-all duration-100  hover:shadow-lg rounded">
+			<div className=" bg-slate-800 hover:bg-slate-700 transition-all duration-100  hover:shadow-lg rounded">
 				<div className="flex items-center">
 					<div className="h-full mx-4 p-2">
 						<Image src="/yext-hackathon.png" width={300} height={300} alt="minesweeper" />

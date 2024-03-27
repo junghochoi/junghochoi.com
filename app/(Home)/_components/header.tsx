@@ -1,10 +1,19 @@
 import Link from "next/link"
 import { Poppins } from "next/font/google"
 
-import { Menu } from "lucide-react"
+import { Github, Menu, Linkedin, File } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
+import {
+	Sheet,
+	SheetTrigger,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+	SheetDescription,
+	SheetFooter,
+	SheetClose,
+} from "@/components/ui/sheet"
 
 const poppinsFont = Poppins({
 	subsets: ["latin"],
@@ -23,17 +32,52 @@ export const HomeHeader = () => {
 
 				<div className="block md:hidden">
 					<Sheet>
-						<SheetTrigger className="p-2 rounded duration-100 flex justify-center items-center hover:bg-slate-700 p">
+						<SheetTrigger className="p-2 rounded duration-100 flex justify-center items-center hover:bg-slate-700">
 							<Menu />
 						</SheetTrigger>
-						<SheetContent>
+						<SheetContent className="bg-slate-800 flex flex-col justify-between">
 							<SheetHeader>
-								<SheetTitle>Are you sure absolutely sure?</SheetTitle>
-								<SheetDescription>
-									This action cannot be undone. This will permanently delete your account and remove your data from our
-									servers.
-								</SheetDescription>
+								<SheetTitle className="text-white">Are you sure absolutely sure?</SheetTitle>
 							</SheetHeader>
+
+							<SheetDescription className="flex flex-col text-white  items-center justify-center">
+								<SheetClose asChild>
+									<Link
+										className="min-w-6 text-4xl text-center p-3 rounded hover:bg-gray-700 transition-colors duration-300"
+										href={"/#work"}
+									>
+										Experience
+									</Link>
+								</SheetClose>
+								<SheetClose asChild>
+									<Link
+										className="min-w-6 text-4xl text-center p-3 rounded hover:bg-gray-700 transition-colors duration-300"
+										href={"/#projects"}
+									>
+										Projects
+									</Link>
+								</SheetClose>
+								<SheetClose asChild>
+									<Link
+										className="min-w-6 text-4xl text-center p-3 rounded hover:bg-gray-700 transition-colors duration-300"
+										href={"/JunghoChoi_Resume.pdf"}
+										target="_blank"
+									>
+										Resume
+									</Link>
+								</SheetClose>
+							</SheetDescription>
+							<SheetFooter>
+								<Link href="https://github.com/junghochoi" target="_blank">
+									<Github size={36} className="mr-4 text-white" />
+								</Link>
+								<Link href="https://github.com/junghochoi" target="_blank">
+									<Linkedin size={36} className="mr-4 text-white" />
+								</Link>
+								<Link href="https://github.com/junghochoi" target="_blank">
+									<File size={36} className="mr-4 text-white" />
+								</Link>
+							</SheetFooter>
 						</SheetContent>
 					</Sheet>
 				</div>
@@ -48,8 +92,12 @@ export const HomeHeader = () => {
 					>
 						Projects
 					</Link>
-					<Link className="min-w-6 h-full p-3 rounded hover:bg-gray-700 transition-colors duration-300" href="/">
-						Social
+					<Link
+						className="min-w-6 h-full p-3 rounded hover:bg-gray-700 transition-colors duration-300"
+						href="/JunghoChoi_Resume.pdf"
+						target="_blank"
+					>
+						Resume
 					</Link>
 				</div>
 			</div>

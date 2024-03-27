@@ -17,11 +17,11 @@ export const About = () => {
 				</p>
 				<div className="flex justify-left">
 					<Link href="https://github.com/junghochoi" target="_blank" className="mr-4">
-						<Github size={48} className="hover:text-white" />
+						<Github size={48} className="mr-4 hover:text-white" />
 					</Link>
 
 					<Link href="https://www.linkedin.com/in/jungho-choi/" target="_blank" className="mr-4">
-						<Linkedin size={48} className="mr-4" />
+						<Linkedin size={48} className="mr-4 hover:text-white" />
 					</Link>
 				</div>
 			</div>
