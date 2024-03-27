@@ -12,7 +12,7 @@ export const About = () => {
 			<div className="py-10 px-5 block sm:flex flex-col justify-center space-y-4 text-gray-300">
 				<h1 className={cn("text-6xl", RubikFont.className)}>Daniel Choi</h1>
 				<h2 className={cn("text-2xl", RubikFont.className)}>Software Engineer</h2>
-				<h3 className={cn("text-gray-400", PoppinsFont.className)}>Turning Ideas into Reali</h3>
+				<h3 className={cn("text-gray-400", PoppinsFont.className)}>Turning Ideas into Software</h3>
 				<div className="flex justify-left">
 					<Link href="https://github.com/junghochoi" target="_blank" className="mr-4">
 						<Github size={48} className="mr-4 hover:text-white" />
